@@ -1,0 +1,14 @@
+C:\Users\Daniel\Desktop\MVCApplication\TestApplication.Website\TestApplication.Data\bin\Debug\TestApplication.Data.dll.config
+C:\Users\Daniel\Desktop\MVCApplication\TestApplication.Website\TestApplication.Data\bin\Debug\TestApplication.Data.dll
+C:\Users\Daniel\Desktop\MVCApplication\TestApplication.Website\TestApplication.Data\bin\Debug\TestApplication.Data.pdb
+C:\Users\Daniel\Desktop\MVCApplication\TestApplication.Website\TestApplication.Data\bin\Debug\EntityFramework.dll
+C:\Users\Daniel\Desktop\MVCApplication\TestApplication.Website\TestApplication.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Daniel\Desktop\MVCApplication\TestApplication.Website\TestApplication.Data\bin\Debug\TestApplication.DataContracts.dll
+C:\Users\Daniel\Desktop\MVCApplication\TestApplication.Website\TestApplication.Data\bin\Debug\TestApplication.Model.dll
+C:\Users\Daniel\Desktop\MVCApplication\TestApplication.Website\TestApplication.Data\bin\Debug\TestApplication.DataContracts.pdb
+C:\Users\Daniel\Desktop\MVCApplication\TestApplication.Website\TestApplication.Data\bin\Debug\TestApplication.Model.pdb
+C:\Users\Daniel\Desktop\MVCApplication\TestApplication.Website\TestApplication.Data\bin\Debug\EntityFramework.xml
+C:\Users\Daniel\Desktop\MVCApplication\TestApplication.Website\TestApplication.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Daniel\Desktop\MVCApplication\TestApplication.Website\TestApplication.Data\obj\Debug\TestApplication.DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Desktop\MVCApplication\TestApplication.Website\TestApplication.Data\obj\Debug\TestApplication.Data.dll
+C:\Users\Daniel\Desktop\MVCApplication\TestApplication.Website\TestApplication.Data\obj\Debug\TestApplication.Data.pdb
