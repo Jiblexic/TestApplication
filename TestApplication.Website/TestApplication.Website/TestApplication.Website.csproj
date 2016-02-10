@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="dotless.Core, Version=1.5.2.0, Culture=neutral, PublicKeyToken=96b446c9e63eae34, processorArchitecture=MSIL">
+      <HintPath>..\packages\dotless.1.5.2\lib\dotless.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -85,6 +89,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -162,7 +170,13 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\GlobalConfig.cs" />
+    <Compile Include="App_Start\IoCConfig.cs" />
+    <Compile Include="App_Start\LessTransform.cs" />
+    <Compile Include="App_Start\NinjectDependancyResolver.cs" />
+    <Compile Include="App_Start\NinjectDependancyScope.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\ValidationActionFilter.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
     <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
@@ -192,8 +206,14 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\ApiControllerBase.cs" />
+    <Compile Include="Controllers\LessonsController.cs" />
+    <Compile Include="Controllers\LookupsController.cs" />
+    <Compile Include="Controllers\RoomLessonsController.cs" />
+    <Compile Include="Controllers\RoomsController.cs" />
+    <Compile Include="Controllers\SubjectsController.cs" />
+    <Compile Include="Controllers\PupilsController.cs" />
+    <Compile Include="Controllers\TeachersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -201,8 +221,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\boilerplate-styles.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -237,12 +256,50 @@
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="Content\toastr.css" />
-    <Content Include="Content\toastr.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="Scripts\app\binder.js" />
+    <Content Include="Scripts\app\bootstrapper.js" />
+    <Content Include="Scripts\app\config.js" />
+    <Content Include="Scripts\app\datacontext.js" />
+    <Content Include="Scripts\app\datacontext.speaker-sessions.js" />
+    <Content Include="Scripts\app\dataprimer.js" />
+    <Content Include="Scripts\app\dataservice.attendance.js" />
+    <Content Include="Scripts\app\dataservice.js" />
+    <Content Include="Scripts\app\dataservice.lookup.js" />
+    <Content Include="Scripts\app\dataservice.person.js" />
+    <Content Include="Scripts\app\dataservice.session.js" />
+    <Content Include="Scripts\app\event.delegates.js" />
+    <Content Include="Scripts\app\filter.sessions.js" />
+    <Content Include="Scripts\app\filter.speakers.js" />
+    <Content Include="Scripts\app\group.js" />
+    <Content Include="Scripts\app\ko.bindingHandlers.js" />
+    <Content Include="Scripts\app\ko.debug.helpers.js" />
+    <Content Include="Scripts\app\messenger.js" />
+    <Content Include="Scripts\app\model.attendance.js" />
+    <Content Include="Scripts\app\model.js" />
+    <Content Include="Scripts\app\model.mapper.js" />
+    <Content Include="Scripts\app\model.person.js" />
+    <Content Include="Scripts\app\model.room.js" />
+    <Content Include="Scripts\app\model.session.js" />
+    <Content Include="Scripts\app\model.timeslot.js" />
+    <Content Include="Scripts\app\model.track.js" />
+    <Content Include="Scripts\app\presenter.js" />
+    <Content Include="Scripts\app\route-config.js" />
+    <Content Include="Scripts\app\route-mediator.js" />
+    <Content Include="Scripts\app\router.js" />
+    <Content Include="Scripts\app\sort.js" />
+    <Content Include="Scripts\app\store.js" />
+    <Content Include="Scripts\app\utils.js" />
+    <Content Include="Scripts\app\vm.favorites.js" />
+    <Content Include="Scripts\app\vm.js" />
+    <Content Include="Scripts\app\vm.session.js" />
+    <Content Include="Scripts\app\vm.sessions.js" />
+    <Content Include="Scripts\app\vm.shell.js" />
+    <Content Include="Scripts\app\vm.speaker.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -267,8 +324,9 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
+    <Content Include="index.cshtml" />
+    <Content Include="Content\styles.less" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
@@ -279,7 +337,40 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\knockout-3.4.0.debug.js" />
     <Content Include="Scripts\knockout-3.4.0.js" />
+    <Content Include="Scripts\lib\amplify.core.js" />
+    <Content Include="Scripts\lib\amplify.request.js" />
+    <Content Include="Scripts\lib\amplify.store.js" />
+    <Content Include="Scripts\lib\infuser.js" />
+    <None Include="Scripts\lib\jquery-2.2.0.intellisense.js" />
+    <Content Include="Scripts\lib\jquery-2.2.0.js" />
+    <Content Include="Scripts\lib\jquery-2.2.0.min.js" />
+    <Content Include="Scripts\lib\jquery.mockjson.js" />
+    <None Include="Scripts\lib\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\lib\jquery.validate.js" />
+    <Content Include="Scripts\lib\jquery.validate.min.js" />
+    <Content Include="Scripts\lib\json2.js" />
+    <Content Include="Scripts\lib\knockout-3.4.0.debug.js" />
+    <Content Include="Scripts\lib\knockout-3.4.0.js" />
+    <Content Include="Scripts\lib\knockout.activity.js" />
+    <Content Include="Scripts\lib\knockout.asyncCommand.js" />
+    <Content Include="Scripts\lib\knockout.dirtyFlag.js" />
+    <Content Include="Scripts\lib\knockout.validation.js" />
+    <Content Include="Scripts\lib\modernizr-2.6.2.js" />
+    <Content Include="Scripts\lib\moment.js" />
+    <Content Include="Scripts\lib\require.js" />
+    <None Include="Scripts\lib\sammy-0.7.1-vsdoc.js" />
+    <Content Include="Scripts\lib\sammy-0.7.1.js" />
+    <Content Include="Scripts\lib\sammy-0.7.1.min.js" />
+    <Content Include="Scripts\lib\sammy.title.js" />
+    <Content Include="Scripts\lib\toastr.js" />
+    <Content Include="Scripts\lib\TrafficCop.js" />
+    <Content Include="Scripts\lib\underscore.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="UnitTests\API\API.Endpoint.Tests.html" />
+    <Content Include="UnitTests\API\API.Endpoint.Tests.js" />
+    <Content Include="UnitTests\API\qunit-utils.js" />
+    <Content Include="UnitTests\qunit\qunit.css" />
+    <Content Include="UnitTests\qunit\qunit.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\toastr.js" />
@@ -294,7 +385,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -303,6 +393,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TestApplication.DataContracts\TestApplication.DataContracts.csproj">
+      <Project>{6a60f28d-7ba6-417d-8981-85300766d023}</Project>
+      <Name>TestApplication.DataContracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TestApplication.Data\TestApplication.DataAccessLayer.csproj">
       <Project>{3e14cdd8-504b-48c2-ad52-2b066b06c0d2}</Project>
       <Name>TestApplication.DataAccessLayer</Name>

@@ -22,6 +22,11 @@ namespace TestApplication.Data
             throw new InvalidOperationException("Cannot delete a RoomLessons object by single id value.");
         }
 
+        public override IQueryable<RoomLessons> GetAll()
+        {
+            return base.GetAll().Include(rm => rm.Room).Include(ls => ls.Lesson);
+        }
+
         public void Delete(int roomId, int lessonId)
         {
             var roomLessons = new RoomLessons { RoomId = roomId, LessonId = lessonId };

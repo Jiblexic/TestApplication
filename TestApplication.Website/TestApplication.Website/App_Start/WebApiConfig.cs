@@ -7,18 +7,38 @@ namespace TestApplication.Website
 {
     public static class WebApiConfig
     {
+        public static string ControllerOnly = "ApiControllerOnly";
+        public static string ControllerAndId = "ApiControllerAndIntegerId";
+        public static string ControllerAction = "ApiControllerAction";
+
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
+            var routes = config.Routes;
 
-            // Web API routes
-            config.MapHttpAttributeRoutes();
-
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
+            // ex: api/Teacher/192
+            routes.MapHttpRoute(
+                name: ControllerAndId,
                 routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                defaults: null,
+                constraints: new { id = @"^\d+$" }
             );
+
+            // ex: api/Teacher
+            routes.MapHttpRoute(
+                name: ControllerOnly,
+                routeTemplate: "api/{controller}"
+            );
+
+            // custom actions
+            // ex: api/lookups/rooms
+            routes.MapHttpRoute(
+                name: ControllerAction,
+                routeTemplate: "api/{controller}/{action}"
+            );
+
+
+
+
         }
     }
 }

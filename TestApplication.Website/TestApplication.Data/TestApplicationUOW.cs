@@ -7,17 +7,12 @@ namespace TestApplication.Data
 {
     public class TestApplicationUOW : ITestApplicationUOW
     {
-        private TestApplicationDbContext DbContext { get; set; }
-
-        protected IRepositoryProvider RepositoryProvider { get; set; }
-
-        private IRepository<T> GetStandardRepo<T>() where T : class
+        public TestApplicationUOW(IRepositoryProvider repositoryProvider)
         {
-            return RepositoryProvider.GetRepositoryForEntityType<T>();
-        }
-        private T GetRepo<T>() where T : class
-        {
-            return RepositoryProvider.GetRepository<T>();
+            CreateDbContext();
+
+            repositoryProvider.DbContext = DbContext;
+            RepositoryProvider = repositoryProvider;
         }
 
         public IRepository<Classroom> Rooms {  get { return GetStandardRepo<Classroom>(); } }
@@ -40,7 +35,7 @@ namespace TestApplication.Data
             DbContext = new TestApplicationDbContext();
 
             // Serialization fails without this
-            DbContext.Configuration.ProxyCreationEnabled = false;
+            DbContext.Configuration.ProxyCreationEnabled = false; 
 
             DbContext.Configuration.LazyLoadingEnabled = false;
 
@@ -48,5 +43,17 @@ namespace TestApplication.Data
             DbContext.Configuration.ValidateOnSaveEnabled = false;
         }
 
+        protected IRepositoryProvider RepositoryProvider { get; set; }
+
+        private IRepository<T> GetStandardRepo<T>() where T : class
+        {
+            return RepositoryProvider.GetRepositoryForEntityType<T>();
+        }
+        private T GetRepo<T>() where T : class
+        {
+            return RepositoryProvider.GetRepository<T>();
+        }
+
+        private TestApplicationDbContext DbContext { get; set; }
     }
 }

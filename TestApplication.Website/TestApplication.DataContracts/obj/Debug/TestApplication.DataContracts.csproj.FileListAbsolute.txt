@@ -5,3 +5,10 @@ C:\Users\Daniel\Desktop\MVCApplication\TestApplication.Website\TestApplication.D
 C:\Users\Daniel\Desktop\MVCApplication\TestApplication.Website\TestApplication.DataContracts\obj\Debug\TestApplication.DataContracts.csprojResolveAssemblyReference.cache
 C:\Users\Daniel\Desktop\MVCApplication\TestApplication.Website\TestApplication.DataContracts\obj\Debug\TestApplication.DataContracts.dll
 C:\Users\Daniel\Desktop\MVCApplication\TestApplication.Website\TestApplication.DataContracts\obj\Debug\TestApplication.DataContracts.pdb
+C:\Users\Daniel\Desktop\TestApplication\TestApplication.Website\TestApplication.DataContracts\bin\Debug\TestApplication.DataContracts.dll
+C:\Users\Daniel\Desktop\TestApplication\TestApplication.Website\TestApplication.DataContracts\bin\Debug\TestApplication.DataContracts.pdb
+C:\Users\Daniel\Desktop\TestApplication\TestApplication.Website\TestApplication.DataContracts\bin\Debug\TestApplication.Model.dll
+C:\Users\Daniel\Desktop\TestApplication\TestApplication.Website\TestApplication.DataContracts\bin\Debug\TestApplication.Model.pdb
+C:\Users\Daniel\Desktop\TestApplication\TestApplication.Website\TestApplication.DataContracts\obj\Debug\TestApplication.DataContracts.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Desktop\TestApplication\TestApplication.Website\TestApplication.DataContracts\obj\Debug\TestApplication.DataContracts.dll
+C:\Users\Daniel\Desktop\TestApplication\TestApplication.Website\TestApplication.DataContracts\obj\Debug\TestApplication.DataContracts.pdb

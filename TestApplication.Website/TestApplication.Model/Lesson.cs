@@ -12,9 +12,9 @@ namespace TestApplication.Model
         public virtual Subject Subject { get; set; }
         public virtual DateTime StartTime { get; set; }
         public virtual DateTime EndTime { get; set; }
-
+        
         public virtual ICollection<Attending> AttendingList { get; set; }
-        public virtual ICollection<RoomLessons> RoomLessonsList { get; set; }
+        //public virtual ICollection<RoomLessons> RoomLessonsList { get; set; }
 
     }
 }

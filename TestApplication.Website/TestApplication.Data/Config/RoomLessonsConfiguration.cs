@@ -9,15 +9,15 @@ namespace TestApplication.DataAccessLayer.Config
         {
             HasKey(x => new { x.RoomId, x.LessonId });
 
-            HasRequired(a => a.Room)
-                .WithMany(s => s.RoomLessonsList)
-                .HasForeignKey(a => a.RoomId)
-                .WillCascadeOnDelete(false);
+            //HasRequired(a => a.Room)
+            //    .WithMany(s => s.RoomLessonsList)
+            //    .HasForeignKey(a => a.RoomId)
+            //    .WillCascadeOnDelete(false);
 
-            HasRequired(a => a.Lesson)
-                .WithMany(p => p.RoomLessonsList)
-                .HasForeignKey(a => a.LessonId)
-                .WillCascadeOnDelete(false);
+            //HasRequired(a => a.Lesson)
+            //    .WithMany(p => p.RoomLessonsList)
+            //    .HasForeignKey(a => a.LessonId)
+            //    .WillCascadeOnDelete(false);
         }
     }
 }

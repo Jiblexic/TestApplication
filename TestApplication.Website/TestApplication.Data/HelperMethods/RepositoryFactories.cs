@@ -14,7 +14,7 @@ namespace TestApplication.Data.HelperMethods
 
         // Factory Pattern
 
-        private IDictionary<Type, Func<DbContext, object>> GetCodeCamperFactories()
+        private IDictionary<Type, Func<DbContext, object>> GetTestApplicationFactories()
         {
             return new Dictionary<Type, Func<DbContext, object>>
                 {
@@ -26,7 +26,7 @@ namespace TestApplication.Data.HelperMethods
 
         public RepositoryFactories()
         {
-            _repositoryFactories = GetCodeCamperFactories();
+            _repositoryFactories = GetTestApplicationFactories();
         }
 
         public RepositoryFactories(IDictionary<Type, Func<DbContext, object>> factories)

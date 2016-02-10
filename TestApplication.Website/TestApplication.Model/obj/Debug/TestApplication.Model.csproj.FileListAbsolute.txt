@@ -3,3 +3,7 @@ C:\Users\Daniel\Desktop\MVCApplication\TestApplication.Website\TestApplication.M
 C:\Users\Daniel\Desktop\MVCApplication\TestApplication.Website\TestApplication.Model\obj\Debug\TestApplication.Model.dll
 C:\Users\Daniel\Desktop\MVCApplication\TestApplication.Website\TestApplication.Model\obj\Debug\TestApplication.Model.pdb
 C:\Users\Daniel\Desktop\MVCApplication\TestApplication.Website\TestApplication.Model\obj\Debug\TestApplication.Model.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Desktop\TestApplication\TestApplication.Website\TestApplication.Model\bin\Debug\TestApplication.Model.dll
+C:\Users\Daniel\Desktop\TestApplication\TestApplication.Website\TestApplication.Model\bin\Debug\TestApplication.Model.pdb
+C:\Users\Daniel\Desktop\TestApplication\TestApplication.Website\TestApplication.Model\obj\Debug\TestApplication.Model.dll
+C:\Users\Daniel\Desktop\TestApplication\TestApplication.Website\TestApplication.Model\obj\Debug\TestApplication.Model.pdb
